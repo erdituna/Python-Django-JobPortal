@@ -3,5 +3,6 @@ from django.shortcuts import render
 
 # Create your views here.
 def index(request):
-    text = "Merhaba Django"
-    return HttpResponse("Deneme Page : %s." % text)
+    text = "Merhaba Django "
+    context = { 'text' : text}
+    return render(request,'index.html',context)
