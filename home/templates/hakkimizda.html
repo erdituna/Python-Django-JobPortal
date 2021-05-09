@@ -1,0 +1,40 @@
+{% extends "homebase.html" %}
+
+{% block title %} Hakkimizda-{{ setting.company }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+
+{% block head %} <link rel="shortcut icon" type="image/x-icon" href='{{setting.icon.url}}'>{% endblock %}
+
+{% block slider %}
+
+{% endblock %}
+
+{% block body %}
+
+<div class="slider-area ">
+    {% load static %}
+        <div class="single-slider section-overly slider-height2 d-flex align-items-center" data-background="{%static 'assets/img/hero/about.jpg'%}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap text-center">
+                            <h2>Hakkımızda</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+         <div class="job-post-company pt-120 pb-120">
+        <div class="container">
+            <div class="row">
+                {{ setting.aboutus|safe }}
+
+
+        </div>
+        </div>
+         </div>
+
+{% endblock %}
