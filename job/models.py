@@ -55,3 +55,11 @@ class Job(models.Model):
     image_tag.short_description = 'Image'
 
 
+
+class Images(models.Model):
+    job=models.ForeignKey(Job,on_delete=models.CASCADE)
+    title = models.CharField(max_length=50,blank=True)
+    image = models.ImageField(blank=True, upload_to='images/')
+
+    def __str__(self):
+        return self.title
