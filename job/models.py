@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor_uploader.fields import RichTextUploadingField
 
 # Create your models here.
 
@@ -47,7 +48,7 @@ class Job(models.Model):
     type = models.CharField(max_length=150)
     location = models.CharField(max_length=255)
     company = models.CharField(max_length=255)
-    detail=models.TextField()
+    detail=RichTextUploadingField(blank=True)
     slug = models.SlugField()
     status=models.CharField(max_length=10,choices=STATUS)
     create_at=models.DateTimeField(auto_now_add=True)
