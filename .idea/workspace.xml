@@ -3,12 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f8cf6347-f0e7-4d68-9ec5-abd27fc741a9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/iletisim.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/iletisim.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/slider.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/slider.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620565248046</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Contact Form">
+      <created>1620645324265</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1620645324265</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -149,13 +153,14 @@
     <MESSAGE value="Setting Ayarlar dinamik Favicon" />
     <MESSAGE value=" Admin panel ckeditor zengin mentin editoru eklenmesi" />
     <MESSAGE value="hakkimizda refereanslar iletisim sayfalarin eklenmesi" />
-    <option name="LAST_COMMIT_MESSAGE" value="hakkimizda refereanslar iletisim sayfalarin eklenmesi" />
+    <MESSAGE value="Contact Form" />
+    <option name="LAST_COMMIT_MESSAGE" value="Contact Form" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="620" y="15" key="CommitChangelistDialog2" timestamp="1620565246328">
+    <state x="620" y="15" key="CommitChangelistDialog2" timestamp="1620645322302">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="620" y="15" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1620565246328" />
+    <state x="620" y="15" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1620645322302" />
     <state x="548" y="170" key="FileChooserDialogImpl" timestamp="1616859573612">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -164,10 +169,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="279" y="58" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1620471683570" />
-    <state x="458" y="160" key="Vcs.Push.Dialog.v2" timestamp="1620565254057">
+    <state x="458" y="160" key="Vcs.Push.Dialog.v2" timestamp="1620645333332">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="458" y="160" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1620565254057" />
+    <state x="458" y="160" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1620645333332" />
     <state x="477" y="240" key="com.intellij.ide.util.TipDialog" timestamp="1620640557761">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
