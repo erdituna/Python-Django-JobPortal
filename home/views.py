@@ -7,14 +7,17 @@ from django.http import HttpResponse, HttpResponseRedirect
 
 # Create your views here.
 from home.models import Setting, ContactFormu, ContactFormMessage
-from job.models import Job
+from job.models import Job, Category
 
 
 def index(request):
+    category = Category.objects.all()
     setting = Setting.objects.get(pk=1)
     sliderdata = Job.objects.all().order_by('id')[:4]
     context = { 'setting' : setting,
-                'sliderdata':sliderdata}
+                'sliderdata':sliderdata,
+                'category': category}
+    category = Category.objects.all()
     return render(request,'index.html',context)
 
 
@@ -28,6 +31,16 @@ def referanslar(request):
     setting = Setting.objects.get(pk=1)
     context = { 'setting' : setting}
     return render(request,'referanslarimiz.html',context)
+
+def category_jobs(request,id,slug):
+    category = Category.objects.all()
+    categorydata = Category.objects.get(pk=id)
+    jobs = Job.objects.filter(category_id=id)
+    context={'jobs': jobs,
+             'category': category,
+             'categorydata': categorydata}
+    return render(request,'jobs.html',context)
+
 
 def iletisim(request):
     if request.method == 'POST':  # check post
