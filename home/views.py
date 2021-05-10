@@ -14,9 +14,14 @@ def index(request):
     category = Category.objects.all()
     setting = Setting.objects.get(pk=1)
     sliderdata = Job.objects.all().order_by('id')[:4]
+    jobs_latest = Job.objects.all().order_by('-id')[:4] #last 4 products
+    randomjobs = Job.objects.all().order_by('?')[:4]   #Random selected 4 products
+
     context = { 'setting' : setting,
                 'sliderdata':sliderdata,
-                'category': category}
+                'category': category,
+                'jobs_latest': jobs_latest,
+                'randomjobs': randomjobs,}
     category = Category.objects.all()
     return render(request,'index.html',context)
 
