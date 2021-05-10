@@ -27,11 +27,39 @@
         </div>
     </div>
 
-         <div class="job-post-company pt-120 pb-120">
+<div class="job-post-company pt-120 pb-120">
         <div class="container">
             <div class="row">
+                 <div class="col-md-8">
                 {{ setting.contact|safe }}
+                 </div>
 
+                            <div class="col-md-4">
+                                        <h3>İletişim Formu :</h3>
+
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <div class="alert alert-{{message.tags}}" role="alert">
+                                        {{ message }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+
+                                  <form class="form-contact contact_form" method="post">
+                                      <div class="row">
+                                <div class="col-12">
+                                         <div class="form-group">
+                                     {% csrf_token %}
+                                             {{ form.as_p }}
+                                              </div>
+                                      </div>
+                            </div>
+
+                            <input type="submit" class="button button-contactForm boxed-btn" value="SEND FORM">
+                                </form>
+
+
+                            </div>
 
         </div>
         </div>
