@@ -18,11 +18,12 @@
 
                         <!-- Search Box -->
                         <div class="row">
-                            <div class="col-xl-8">
+                            <div class="col-xl-12">
                                 <!-- form -->
-                                <form action="#" class="search-box">
+                                <form action="/search/" class="search-box" method="post">
+                                    {% csrf_token %}
                                     <div class="input-form">
-                                        <input type="text" placeholder="Job Tittle or keyword">
+                                        <input name="query" type="text" placeholder="Job Tittle or keyword">
                                     </div>
                                     <div class="select-form">
                                         <div class="select-itms">

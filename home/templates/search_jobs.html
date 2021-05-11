@@ -1,0 +1,66 @@
+{% extends "homebase.html" %}
+
+{% block title %} Hakkimizda-{{ setting.company }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+
+{% block head %} <link rel="shortcut icon" type="image/x-icon" href='{{setting.icon.url}}'>{% endblock %}
+
+{% block slider %}
+
+{% endblock %}
+
+{% block body %}
+
+<div class="slider-area ">
+    {% load static %}
+        <div class="single-slider section-overly slider-height2 d-flex align-items-center" data-background="{%static 'assets/img/hero/about.jpg'%}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap text-center">
+                            <h2>Hakkımızda</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div class="section-top-border">
+    <h3 class="mb-20">Table</h3>
+    <div class="progress-table-wrap">
+        <div class="progress-table">
+            <div class="table-head">
+                <div class="serial">Job Title</div>
+                <div class="country">Location</div>
+                <div class="serial">Image</div>
+                <div class="visit">Salary</div>
+                <div class="visit">Company</div>
+
+
+
+            </div>
+            {% for rs in jobs %}
+
+            <div class="table-row">
+                <div class="serial">{{ rs.title }}</div>
+                <div class="country">{{ rs.location }}</div>
+                 <div class="serial"><a href="/job/{{ rs.id }}/{{ rs.slug }}"><img src="{{ rs.image.url }}"></a></div>
+                <div class="visit">${{ rs.salary }}</div>
+                <div class="visit">{{ rs.company }}</div>
+                <div class="btn" width="20px"><a href="/Apply/{{ rs.id }}">Apply</a></div>
+
+
+            </div>
+            {% endfor %}
+
+
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

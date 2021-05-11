@@ -7,6 +7,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 
 
 # Create your views here.
+from home.forms import SearchForm
 from home.models import Setting, ContactFormu, ContactFormMessage
 from job.models import Job, Category, Images, Comment
 
@@ -80,3 +81,17 @@ def job_detail(request,id,slug):
              'comments': comments,
               }
     return render(request,'job_detail.html',context)
+
+
+def job_search(request):
+    if request.method == 'POST': # check post
+        form = SearchForm(request.POST)
+        if form.is_valid():
+            query = form.cleaned_data['query'] # get form input data
+            jobs = Job.objects.filter(title__icontains=query)
+            category = Category.objects.all()
+            context = {'jobs': jobs,
+                       'category': category }
+            return render(request, 'search_jobs.html', context)
+
+    return HttpResponseRedirect('/')
