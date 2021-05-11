@@ -50,6 +50,7 @@ class JobAdmin(admin.ModelAdmin):
     readonly_fields = ('image_tag',)
     list_filter = ['status','category']
     inlines = [JobImageInline]
+    prepopulated_fields = {'slug': ('title',)}
 
 
 class ImagesAdmin(admin.ModelAdmin):

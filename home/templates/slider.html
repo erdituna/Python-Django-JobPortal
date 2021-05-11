@@ -1,3 +1,9 @@
+{% load static %}
+<!-- jQuery !-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"> </script>
+<!-- jQuery UI !-->
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 
 
     <div class="slider-area ">
@@ -27,11 +33,16 @@
                                     </div>
                                     <div class="select-form">
                                         <div class="select-itms">
-                                            <select name="select" id="select1">
-                                                <option value="">Location BD</option>
-                                                <option value="">Location PK</option>
-                                                <option value="">Location US</option>
-                                                <option value="">Location UK</option>
+                                            <select name="catid">
+                                                <option value="0">All Categories</option>
+                                                {% load mptt_tags %}
+                                                {% recursetree category %}
+                                                {% if node.is_leaf_node %}
+                                                <option value="{{ node.id }}">{{ node.title }}</option>
+                                                {% endif %}
+                                                {% endrecursetree %}
+
+
                                             </select>
                                         </div>
                                     </div>
@@ -45,3 +56,4 @@
                 </div>
             </div>
         </div>
+

@@ -28,6 +28,7 @@ urlpatterns = [
     path('category/<int:id>/<slug:slug>', views.category_jobs, name='category_jobs'),
     path('job/<int:id>/<slug:slug>', views.job_detail, name='job_detail'),
     path('search/', views.job_search, name='job_search'),
+    path('search_auto/', views.job_search_auto, name='job_search_auto'),
     path('job/', include('job.urls')),
     path('home/', include('home.urls')),
     path('admin/', admin.site.urls),

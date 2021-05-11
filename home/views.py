@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib import messages
 from django.http import HttpResponse, HttpResponseRedirect
+import json
 
 
 
@@ -95,3 +96,18 @@ def job_search(request):
             return render(request, 'search_jobs.html', context)
 
     return HttpResponseRedirect('/')
+
+def job_search_auto(request):
+  if request.is_ajax():
+    q = request.GET.get('term', '')
+    job = Job.objects.filter(title__icontains=q)
+    results = []
+    for rs in job:
+      job_json = {}
+      job_json = rs.title
+      results.append(job_json)
+    data = json.dumps(results)
+  else:
+    data = 'fail'
+  mimetype = 'application/json'
+  return HttpResponse(data, mimetype)

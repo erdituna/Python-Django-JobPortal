@@ -1,13 +1,14 @@
+from ckeditor_uploader.fields import RichTextUploadingField
 from django.contrib.auth.models import User
 from django.db import models
-from ckeditor_uploader.fields import RichTextUploadingField
 from django.forms import ModelForm
-from mptt.models import MPTTModel
+from django.urls import reverse
+from django.utils.safestring import mark_safe
 from mptt.fields import TreeForeignKey
+from mptt.models import MPTTModel
+
 
 # Create your models here.
-
-from django.utils.safestring import mark_safe
 
 
 class Category(MPTTModel):
@@ -21,7 +22,7 @@ class Category(MPTTModel):
     description = models.CharField(max_length=255)
     image=models.ImageField(blank=True,upload_to='images/')
     status=models.CharField(max_length=10, choices=STATUS)
-    slug = models.SlugField()
+    slug = models.SlugField(null=False,unique=True)
     create_at=models.DateTimeField(auto_now_add=True)
     update_at=models.DateTimeField(auto_now=True)
 
@@ -49,6 +50,9 @@ class Category(MPTTModel):
 
     image_tag.short_description = 'Image'
 
+    def get_absolute_url(self):
+        return reverse('category_detail', kwargs={'slug': self.slug})
+
 
 
 
@@ -69,7 +73,7 @@ class Job(models.Model):
     location = models.CharField(max_length=255)
     company = models.CharField(max_length=255)
     detail=RichTextUploadingField(blank=True)
-    slug = models.SlugField()
+    slug = models.SlugField(null=False,unique=True)
     status=models.CharField(max_length=10,choices=STATUS)
     create_at=models.DateTimeField(auto_now_add=True)
     update_at=models.DateTimeField(auto_now=True)
@@ -83,6 +87,8 @@ class Job(models.Model):
 
     image_tag.short_description = 'Image'
 
+    def get_absolute_url(self):
+        return reverse('job_detail', kwargs={'slug': self.slug})
 
 
 class Images(models.Model):
@@ -121,3 +127,6 @@ class CommentForm(ModelForm):
     class Meta:
         model = Comment
         fields = ['subject', 'comment']
+
+
+
