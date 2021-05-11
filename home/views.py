@@ -7,7 +7,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 
 # Create your views here.
 from home.models import Setting, ContactFormu, ContactFormMessage
-from job.models import Job, Category
+from job.models import Job, Category, Images
 
 
 def index(request):
@@ -66,3 +66,14 @@ def iletisim(request):
     context = { 'setting' : setting,'form':form}
 
     return render(request,'iletisim.html',context)
+
+
+def job_detail(request,id,slug):
+    category = Category.objects.all()
+    job = Job.objects.get(pk=id)
+    images = Images.objects.filter(job_id=id)
+    context={'job': job,
+             'category':category,
+             'images': images,
+              }
+    return render(request,'job_detail.html',context)

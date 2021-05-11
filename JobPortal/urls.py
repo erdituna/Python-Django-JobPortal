@@ -26,6 +26,7 @@ urlpatterns = [
     path('referanslar/', views.referanslar,name='referanslar'),
     path('iletisim/', views.iletisim,name='iletisim'),
     path('category/<int:id>/<slug:slug>', views.category_jobs, name='category_jobs'),
+    path('job/<int:id>/<slug:slug>', views.job_detail, name='job_detail'),
     path('job/', include('job.urls')),
     path('home/', include('home.urls')),
     path('admin/', admin.site.urls),
