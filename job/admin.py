@@ -3,7 +3,7 @@ from django.contrib import admin
 # Register your models here.
 from mptt.admin import DraggableMPTTAdmin
 
-from job.models import Category, Job, Images
+from job.models import Category, Job, Images, Comment
 
 
 class JobImageInline(admin.TabularInline):
@@ -57,6 +57,13 @@ class ImagesAdmin(admin.ModelAdmin):
     readonly_fields = ('image_tag',)
 
 
+
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ['subject','comment', 'status','create_at']
+    list_filter = ['status']
+
+
 admin.site.register(Category,CategoryAdmin)
 admin.site.register(Job,JobAdmin)
+admin.site.register(Comment,CommentAdmin)
 admin.site.register(Images,ImagesAdmin)

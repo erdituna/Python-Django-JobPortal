@@ -1,3 +1,4 @@
+
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib import messages
@@ -7,7 +8,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 
 # Create your views here.
 from home.models import Setting, ContactFormu, ContactFormMessage
-from job.models import Job, Category, Images
+from job.models import Job, Category, Images, Comment
 
 
 def index(request):
@@ -72,8 +73,10 @@ def job_detail(request,id,slug):
     category = Category.objects.all()
     job = Job.objects.get(pk=id)
     images = Images.objects.filter(job_id=id)
+    comments = Comment.objects.filter(job_id=id, status='True')
     context={'job': job,
              'category':category,
              'images': images,
+             'comments': comments,
               }
     return render(request,'job_detail.html',context)
