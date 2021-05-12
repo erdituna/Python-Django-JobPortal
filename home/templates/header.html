@@ -22,9 +22,9 @@
                                             <li><a href="/hakkimizda">Hakkımızda</a></li>
                                             <li><a href="/referanslar">Referanslarımız</a></li>
                                             <li><a href="/iletisim">İletişim</a></li>
-                                            <li><a href="#">User</a>
+                                            <li><a href="/user/">User</a>
                                                 <ul class="submenu">
-                                                    <li><a href="/logout/">logout</a></li>
+
                                                     <li><a href="single-blog.html">Blog Details</a></li>
                                                     <li><a href="elements.html">Elements</a></li>
                                                     <li><a href="job_details.html">job Details</a></li>
@@ -36,7 +36,7 @@
                                 </div>
                                 {% if user.id is not None %}
                               <div class="header-btn d-none f-right d-lg-block">
-                                    <a href="#" class="btn head-btn1">{{user.first_name}}</a>
+                                    <a href="/user/" class="btn head-btn1">{{user.first_name}}</a>
 
                                 </div>
                                  {% else %}

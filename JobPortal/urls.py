@@ -34,6 +34,7 @@ urlpatterns = [
     path('register/', views.register_view, name='register_view'),
     path('job/', include('job.urls')),
     path('home/', include('home.urls')),
+    path('user/', include('user.urls')),
     path('admin/', admin.site.urls),
     path('ckeditor/', include('ckeditor_uploader.urls')),
 ]
