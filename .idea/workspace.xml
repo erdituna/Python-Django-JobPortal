@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f8cf6347-f0e7-4d68-9ec5-abd27fc741a9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JobPortal/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/JobPortal/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JobPortal/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/JobPortal/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620820071861</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="User Profile İşlemleri">
+      <created>1620822847265</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1620822847265</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -261,13 +266,14 @@
     <MESSAGE value="User Login &amp; Logout" />
     <MESSAGE value="Üye kayıt formu" />
     <MESSAGE value="Üye profili Resim ve ek bilgiler" />
-    <option name="LAST_COMMIT_MESSAGE" value="Üye profili Resim ve ek bilgiler" />
+    <MESSAGE value="User Profile İşlemleri" />
+    <option name="LAST_COMMIT_MESSAGE" value="User Profile İşlemleri" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="620" y="15" key="CommitChangelistDialog2" timestamp="1620820070192">
+    <state x="620" y="15" key="CommitChangelistDialog2" timestamp="1620822845735">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="620" y="15" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1620820070192" />
+    <state x="620" y="15" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1620822845735" />
     <state x="548" y="170" key="FileChooserDialogImpl" timestamp="1616859573612">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -276,10 +282,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="279" y="58" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1620471683570" />
-    <state x="458" y="160" key="Vcs.Push.Dialog.v2" timestamp="1620820079924">
+    <state x="458" y="160" key="Vcs.Push.Dialog.v2" timestamp="1620822853835">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="458" y="160" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1620820079924" />
+    <state x="458" y="160" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1620822853835" />
     <state x="477" y="240" key="com.intellij.ide.util.TipDialog" timestamp="1620813430432">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
