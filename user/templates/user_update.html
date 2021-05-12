@@ -1,0 +1,96 @@
+{% extends "homebase.html" %}
+
+{% block title %} {{ profile.user_name }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+
+{% block head %} <link rel="shortcut icon" type="image/x-icon" href='{{setting.icon.url}}'>{% endblock %}
+
+{% block slider %}
+
+{% endblock %}
+
+{% block body %}
+
+<div class="slider-area ">
+    {% load static %}
+        <div class="single-slider section-overly slider-height2 d-flex align-items-center" data-background="{%static 'assets/img/hero/about.jpg'%}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap text-center">
+                            <h2>User Profile</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="job-listing-area pt-120 pb-120">
+        <div class="container">
+            <div class="row">
+                <!-- Left content -->
+                <div class="col-xl-3 col-lg-3 col-md-3">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="small-section-tittle2 mb-45">
+                                <div class="ion">
+
+                                </div>
+                                <h4>User Panel</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Job Category Listing start -->
+                    <div class="job-category-listing mb-50">
+                        <!-- single one -->
+                        <div class="single-listing">
+                            <div class="small-section-tittle2">
+                                <h5>MY ACCOUNT</h5>
+                                {% include "user_panel.html" %}
+
+
+                            </div>
+
+                            <!-- select-Categories End -->
+                        </div>
+
+
+                    </div>
+                    <!-- Job Category Listing End -->
+                </div>
+                <!-- Right content -->
+                <div class="col-xl-9 col-lg-9 col-md-9">
+                    <!-- Featured_job_start -->
+                     <form method="POST" enctype = "multipart/form-data">
+                        {% csrf_token %}
+                         <div class="mt-10">
+                        <fieldset class="single-input">
+                            {{ user_form.as_p  }}
+                            {{ profile_form.as_p  }}
+                        </fieldset>
+                             </div>
+                        <div class="mt-10">
+                            <button class="button button-contactForm boxed-btn" type="submit">Update</button>
+                        </div>
+                    </form>
+
+
+                                </div>
+                            </div>
+                            <!-- Count of Job list End -->
+                            <!-- single-job-content -->
+
+
+                        </div>
+
+
+                    </section>
+                    <!-- Featured_job_end -->
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
