@@ -1,6 +1,6 @@
 {% extends "homebase.html" %}
 
-{% block title %} Login-{{ setting.company }} {% endblock %}
+{% block title %} Register-{{ setting.company }} {% endblock %}
 {% block description %} {{ setting.description }} {% endblock %}
 {% block keywords %} {{ setting.keywords }} {% endblock %}
 
@@ -19,7 +19,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="hero-cap text-center">
-                            <h2>Login Page</h2>
+                            <h2>User Register</h2>
                         </div>
                     </div>
                 </div>
@@ -43,24 +43,22 @@
                                 {% endfor %}
                             {% endif %}
 
-                                  <form class="" method="post">
-                                      {% csrf_token %}
-                                      <div class="row">
+                                <form method="post">
+                                     {% csrf_token %}
+                                     {% for field in form %}
+                                    <p>
+                                        {{field.label_tag}} <br>
+                                        {{field}}
+                                        {% if field.help_text %}
+                                            <small style="color:grey">{{field.help_text}}</small>
+                                        {% endif %}
+                                        {% for error in field.errors %}
+                                        <p style="color:red">{{ error }}</p>
+                                        {% endfor %}
 
-                                <div class="col-md-8">
-								<input type="text" name="username" placeholder="User Name"
-                                       class="single-input">
-
-							<div class="mt-10">
-								<input type="password" name="password" placeholder="Password"
-
-									class="single-input">
-							</div>
-                                    </div>
-                            </div>
-<div class="mt-10">
-                            <input type="submit" class="button button-contactForm boxed-btn" value="Login">
-    </div>
+                                    </p>
+                                    {% endfor %}
+                                    <button class="button button-contactForm boxed-btn" type="submit">Register</button>
                                 </form>
 
 
