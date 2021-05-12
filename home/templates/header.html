@@ -17,19 +17,25 @@
                                 <div class="main-menu">
                                     <nav class="d-none d-lg-block">
                                         <ul id="navigation">
-                                            <li><a href="/">Anasayfa</a></li>
+                                            <li><a href="/">Home</a></li>
                                             <li><a href="job_listing.html">Find a Jobs </a></li>
-                                            <li><a href="/hakkimizda">Hakkımızda</a></li>
-                                            <li><a href="/referanslar">Referanslarımız</a></li>
-                                            <li><a href="/iletisim">İletişim</a></li>
-                                            <li><a href="/user/">User</a>
-                                                <ul class="submenu">
+                                            <li><a href="/hakkimizda">About</a></li>
+                                            <li><a href="/referanslar">References</a></li>
+                                            <li><a href="/iletisim">Contact</a></li>
+                                            {% load mptt_tags %}
+                                            <li><a href="">Category</a>
 
-                                                    <li><a href="single-blog.html">Blog Details</a></li>
-                                                    <li><a href="elements.html">Elements</a></li>
-                                                    <li><a href="job_details.html">job Details</a></li>
+                                                <ul class="submenu">
+                                                    {% recursetree category %}
+                                                    <li>
+                                                        <a href="/category/{{ node.id }}/{{ node.slug }}">{{node.title}}</a>
+                                                    </li>
+                                                    {% endrecursetree %}
+
                                                 </ul>
+
                                             </li>
+
 
                                         </ul>
                                     </nav>
@@ -48,9 +54,7 @@
                             </div>
                         </div>
                         <!-- Mobile Menu -->
-                        <div class="col-12">
-                            <div class="mobile_menu d-block d-lg-none"></div>
-                        </div>
+
                     </div>
                 </div>
            </div>
