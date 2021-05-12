@@ -72,7 +72,7 @@
 
                     <div class="post-details2  mb-50">
                         <!-- Small Section Tittle -->
-                        <h2>Comment </h2>
+                        <h2>Yorumlar: </h2>
                         {% for rs in comments %}
                         <div class="comment-list">
                             <div class="desc">
@@ -81,16 +81,16 @@
 
                                 <div class="d-flex justify-content-between">
                                     <div class="d-flex align-items-center">
-                                        <h5>
-                                            {{ rs.user.first_name }}</a>
-                                        </h5>
+                                        <p>
+                                            K.Adı:{{ rs.user.first_name }}
+                                        </p>
 
                                     </div>
                                     <div>
-                                        <p>{{ rs.create_at}}</p>
+                                        <p>Tarih:{{ rs.create_at}}</p>
                                     </div>
                                     <div class="reply-btn">
-                                        <p> {{ rs.subject }}</p>
+                                        <p>konu: {{ rs.subject }}</p>
                                     </div>
                                 </div>
                             </div>

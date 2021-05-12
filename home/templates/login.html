@@ -1,0 +1,73 @@
+{% extends "homebase.html" %}
+
+{% block title %} Hakkimizda-{{ setting.company }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+
+{% block head %} <link rel="shortcut icon" type="image/x-icon" href='{{setting.icon.url}}'>{% endblock %}
+
+{% block slider %}
+
+{% endblock %}
+
+{% block body %}
+
+<div class="slider-area ">
+    {% load static %}
+        <div class="single-slider section-overly slider-height2 d-flex align-items-center" data-background="{%static 'assets/img/hero/about.jpg'%}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap text-center">
+                            <h2>Login Page</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="job-post-company pt-120 pb-120">
+        <div class="container">
+            <div class="row">
+
+
+                            <div class="col-md-12">
+                                        <h3>Login Page :</h3>
+
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <div class="alert alert-{{message.tags}}" role="alert">
+                                        {{ message }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+
+                                  <form class="" method="post">
+                                      {% csrf_token %}
+                                      <div class="row">
+
+                                <div class="col-md-8">
+								<input type="text" name="username" placeholder="User Name"
+                                       class="single-input">
+
+							<div class="mt-10">
+								<input type="password" name="password" placeholder="Password"
+
+									class="single-input">
+							</div>
+                                    </div>
+                            </div>
+<div class="mt-10">
+                            <input type="submit" class="button button-contactForm boxed-btn" value="Login">
+    </div>
+                                </form>
+
+
+                            </div>
+
+        </div>
+        </div>
+         </div>
+
+{% endblock %}

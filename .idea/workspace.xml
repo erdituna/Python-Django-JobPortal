@@ -3,8 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="f8cf6347-f0e7-4d68-9ec5-abd27fc741a9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JobPortal/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/JobPortal/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/job_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/job_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/slider.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/slider.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620736817211</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="slug düzeltme">
+      <created>1620739423623</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1620739423623</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -225,13 +236,14 @@
     <MESSAGE value="Kullanıcı yorum sistemi" />
     <MESSAGE value="search jobs" />
     <MESSAGE value="Otomatik Slug oluşturma" />
-    <option name="LAST_COMMIT_MESSAGE" value="Otomatik Slug oluşturma" />
+    <MESSAGE value="slug düzeltme" />
+    <option name="LAST_COMMIT_MESSAGE" value="slug düzeltme" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="620" y="15" key="CommitChangelistDialog2" timestamp="1620736815552">
+    <state x="620" y="15" key="CommitChangelistDialog2" timestamp="1620739422003">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="620" y="15" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1620736815552" />
+    <state x="620" y="15" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1620739422003" />
     <state x="548" y="170" key="FileChooserDialogImpl" timestamp="1616859573612">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -240,13 +252,13 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="279" y="58" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1620471683570" />
-    <state x="458" y="160" key="Vcs.Push.Dialog.v2" timestamp="1620736822398">
+    <state x="458" y="160" key="Vcs.Push.Dialog.v2" timestamp="1620739428649">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="458" y="160" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1620736822398" />
-    <state x="477" y="240" key="com.intellij.ide.util.TipDialog" timestamp="1620720729401">
+    <state x="458" y="160" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1620739428649" />
+    <state x="477" y="240" key="com.intellij.ide.util.TipDialog" timestamp="1620813430432">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="477" y="240" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1620720729401" />
+    <state x="477" y="240" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1620813430432" />
   </component>
 </project>
