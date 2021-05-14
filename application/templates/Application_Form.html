@@ -1,0 +1,75 @@
+{% extends "homebase.html" %}
+
+{% block title %} Hakkimizda-{{ setting.company }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+
+{% block head %} <link rel="shortcut icon" type="image/x-icon" href='{{setting.icon.url}}'>{% endblock %}
+
+{% block slider %}
+
+{% endblock %}
+
+{% block body %}
+
+<div class="slider-area ">
+    {% load static %}
+        <div class="single-slider section-overly slider-height2 d-flex align-items-center" data-background="{%static 'assets/img/hero/about.jpg'%}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap text-center">
+                            <h2>Hakkımızda</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+         <div class="job-post-company pt-120 pb-120">
+              {% if messages %}
+                                {% for message in messages %}
+                                    <div class="alert alert-{{message.tags}}" role="alert">
+                                        {{ message }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+        <div class="container">
+            <div class="row">
+
+                <Form action="" method="post">
+                    {% csrf_token %}
+                    <div class="col-md-6">
+                        <div class="billing-details">
+
+
+                            <div class="section-title">
+                                <h4 class="title">Application Detail</h4>
+                            </div>
+                            <p><label>First name:</label>
+                                <input type="text" name="first_name"  value="{{ user.first_name }}" class="input" maxlength="10"></p>
+                            <p><label >Last name:</label>
+                                <input type="text" name="last_name"  value="{{ user.last_name }}" class="input" maxlength="10" ></p>
+                            <p><label >Salary:</label>
+                                <input type="text" name="salary" value="{{ job.salary }}" class="input" maxlength="150" ></p>
+                             <p><label >title:</label>
+                                <input type="text" name="title" value="{{ job.title }}" class="input" maxlength="150" ></p>
+                            <p><label >Company:</label>
+                                <input type="text" name="company"  value="{{ job.company  }}"  class="input" maxlength="20" ></p>
+
+
+                            <div class="pull-right">
+                                <button type="submit" class="button button-contactForm boxed-btn"> Send</button>
+                            </div>
+                        </div>
+                    </div>
+                    </form>
+
+
+
+        </div>
+        </div>
+         </div>
+
+{% endblock %}

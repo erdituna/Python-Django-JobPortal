@@ -1,0 +1,71 @@
+{% extends "homebase.html" %}
+
+{% block title %} Hakkimizda-{{ setting.company }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+
+{% block head %} <link rel="shortcut icon" type="image/x-icon" href='{{setting.icon.url}}'>{% endblock %}
+
+{% block slider %}
+
+{% endblock %}
+
+{% block body %}
+
+<div class="slider-area ">
+    {% load static %}
+        <div class="single-slider section-overly slider-height2 d-flex align-items-center" data-background="{%static 'assets/img/hero/about.jpg'%}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap text-center">
+                            <h2>Hakkımızda</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+         <div class="job-post-company pt-120 pb-120">
+        <div class="container">
+            <div class="row">
+              <div class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="order-summary clearfix">
+                        <div class="section-title">
+                            <h3 class="title">Order Complated</h3>
+                        </div>
+                        <hr>
+                        <h2>Dear  {{ user.first_name }} {{  user.last_name }}</h2>
+                        <hr>
+                        <h3>Your order is completed</h3>
+
+                        <hr>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /section -->
+                    </div>
+                    </form>
+
+
+
+        </div>
+        </div>
+         </div>
+
+{% endblock %}

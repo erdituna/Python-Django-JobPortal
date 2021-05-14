@@ -19,25 +19,35 @@ def index(request):
     sliderdata = Job.objects.all().order_by('id')[:4]
     jobs_latest = Job.objects.all().order_by('-id')[:4] #last 4 products
     randomjobs = Job.objects.all().order_by('?')[:4]   #Random selected 4 products
+    image = Images.objects.all()
 
     context = { 'setting' : setting,
                 'sliderdata':sliderdata,
                 'category': category,
+                'image': image,
                 'jobs_latest': jobs_latest,
-                'randomjobs': randomjobs,}
-    category = Category.objects.all()
+                'randomjobs': randomjobs,
+                }
+
     return render(request,'index.html',context)
 
 
 def hakkimizda(request):
     setting = Setting.objects.get(pk=1)
-    context = { 'setting' : setting}
+    category = Category.objects.all()
+    context = { 'setting' : setting,
+                'category': category,}
+
     return render(request,'hakkimizda.html',context)
 
 
 def referanslar(request):
     setting = Setting.objects.get(pk=1)
-    context = { 'setting' : setting}
+    category = Category.objects.all()
+    context = {'setting': setting,
+               'category': category, }
+
+
     return render(request,'referanslarimiz.html',context)
 
 def category_jobs(request,id,slug):
@@ -65,8 +75,9 @@ def iletisim(request):
             return HttpResponseRedirect('/iletisim')
 
     setting = Setting.objects.get(pk=1)
+    category = Category.objects.all()
     form = ContactFormu()
-    context = { 'setting' : setting,'form':form}
+    context = { 'setting' : setting,'form':form,'category': category, }
 
     return render(request,'iletisim.html',context)
 
@@ -160,3 +171,5 @@ def register_view(request):
                'form': form,
                }
     return render(request, 'register.html', context)
+
+

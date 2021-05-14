@@ -7,9 +7,10 @@ from django.contrib import messages
 
 
 # Create your views here.
-from home.models import UserProfile
+from home.models import UserProfile, Cv
 from job.models import Category
 from user.forms import ProfileUpdateForm, UserUpdateForm
+
 
 
 def index(request):
@@ -19,7 +20,6 @@ def index(request):
     context = {'category': category,
         'profile': profile}
     return render(request, 'user_profile.html', context)
-
 
 
 
