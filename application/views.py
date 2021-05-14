@@ -15,7 +15,7 @@ def App(request,id):
     category = Category.objects.all()
     current_user = request.user
     job = Job.objects.get(pk=id)
-    url = request.META.get('HTTP_REFERER')  # get last url
+
 
     if request.method == 'POST':  # if there is a post
         form = AppForm(request.POST)
@@ -39,10 +39,11 @@ def App(request,id):
 
 
     form= AppForm()
+    profile = UserProfile.objects.get(user_id=current_user.id)
     context = {'job': job,
                'category': category,
                'form': form,
-
+               'profile': profile,
                }
     return render(request, 'Application_Form.html', context)
 

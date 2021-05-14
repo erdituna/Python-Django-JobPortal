@@ -1,0 +1,119 @@
+{% extends "homebase.html" %}
+
+{% block title %} {{ profile.user_name }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+
+{% block head %} <link rel="shortcut icon" type="image/x-icon" href='{{setting.icon.url}}'>{% endblock %}
+
+{% block slider %}
+
+{% endblock %}
+
+{% block body %}
+
+<div class="slider-area ">
+    {% load static %}
+        <div class="single-slider section-overly slider-height2 d-flex align-items-center" data-background="{%static 'assets/img/hero/about.jpg'%}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap text-center">
+                            <h2>User Profile</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="job-listing-area pt-120 pb-120">
+        <div class="container">
+            <div class="row">
+                <!-- Left content -->
+                <div class="col-xl-2 col-lg-2 col-md-2">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="small-section-tittle2 mb-45">
+                                <div class="ion">
+
+                                </div>
+                                <h4>User Panel</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Job Category Listing start -->
+                    <div class="job-category-listing mb-50">
+                        <!-- single one -->
+                        <div class="single-listing">
+                            <div class="small-section-tittle2">
+                                <h5>MY ACCOUNT</h5>
+                                {% include "user_panel.html" %}
+
+
+                            </div>
+
+                            <!-- select-Categories End -->
+                        </div>
+
+
+                    </div>
+                    <!-- Job Category Listing End -->
+                </div>
+                <!-- Right content -->
+                <div class="col-xl-10 col-lg-10 col-md-10">
+                    <!-- Featured_job_start -->
+                    <section class="featured-job-area">
+                        <div class="container">
+                            <!-- Count of Job list Start -->
+
+
+                            <div class="section-top-border">
+                                <h3 class="mb-30">Application Table</h3>
+                                <div class="progress-table-wrap">
+                                    <div class="progress-table">
+                                        <div class="table-head">
+                                            <div class="serial">Id</div>
+                                            <div class="country">Job</div>
+                                            <div class="visit">Subject </div>
+                                            <div class="country">Comment</div>
+                                            <div class="country">Status</div>
+                                            <div class="country">Date</div>
+                                            <div class="country">Date</div>
+
+
+
+
+                                        </div>
+                                        {% for rs in comments %}
+                                        <div class="table-row">
+                                            <div class="serial">{{rs.id}}</div>
+                                            <div class="country">{{rs.job.title}}</div>
+                                            <div class="visit">{{rs.subject}}</div>
+                                            <div class="country">{{rs.comment}}</div>
+                                            <div class="country">{{rs.status}}</div>
+                                            <div class="country">{{rs.create_at}}</div>
+                                            <div class="country"><a class="genric-btn success" href="/user/deletecomment/{{ rs.id }}" onclick="return confirm('Will be Delete ! Are you sure?')"> Delete </a></div>
+
+
+
+
+
+                                        </div>
+                                        {% endfor %}
+
+                      </div>           <!-- Count of Job list End -->
+            </div>
+                     <!-- single-job-content -->
+ </div>
+ </div>
+
+                    </section>
+
+                    <!-- Featured_job_end -->
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -7,15 +7,16 @@ from django.contrib import messages
 
 
 # Create your views here.
-from home.models import UserProfile, Cv
-from job.models import Category
+from application.models import Application
+from home.models import UserProfile
+from job.models import Category, Comment
 from user.forms import ProfileUpdateForm, UserUpdateForm
 
 
 
 def index(request):
     category = Category.objects.all()
-    current_user = request.user  # Access User Session information
+    current_user = request.user
     profile = UserProfile.objects.get(user_id=current_user.id)
     context = {'category': category,
         'profile': profile}
@@ -63,3 +64,39 @@ def change_password(request):
         form = PasswordChangeForm(request.user)
         return render(request, 'change_password.html', {'form': form,'category': category,
                        })
+
+
+@login_required(login_url='/login') # Check login
+def applications(request):
+    category = Category.objects.all()
+    current_user = request.user
+    application = Application.objects.filter(user_id=current_user.id).order_by('-id')
+    context = {'category': category,
+        'application': application,
+    }
+    return render(request, 'user_applications.html', context)
+
+
+
+    return HttpResponse("Application Listesi")
+
+
+
+def comments(request):
+    category = Category.objects.all()
+    current_user = request.user
+    comments = Comment.objects.filter(user_id=current_user.id)
+    context = {
+        'category': category,
+        'comments': comments,
+    }
+    return render(request, 'user_comments.html', context)
+
+
+
+@login_required(login_url='/login') # Check login
+def user_deletecomment(request,id):
+    current_user = request.user
+    Comment.objects.filter(id=id, user_id=current_user.id).delete()
+    messages.success(request, 'Comment deleted..')
+    return HttpResponseRedirect('/user/comments')
