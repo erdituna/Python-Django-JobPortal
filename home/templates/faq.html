@@ -1,0 +1,60 @@
+{% extends "homebase.html" %}
+
+{% block title %} Frequently Asked Question-{{ setting.company }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+
+
+{% block slider %} {% endblock %}
+
+
+{% block head %}
+
+ <script>
+  $( function() {
+    $( "#accordion" ).accordion();
+  } );
+  </script>
+{% endblock %}
+
+
+{% block body %}
+
+<div class="slider-area ">
+    {% load static %}
+        <div class="single-slider section-overly slider-height2 d-flex align-items-center" data-background="{%static 'assets/img/hero/about.jpg'%}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap text-center">
+                            <h2>Sıkça Sorulan Sorular</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div class="job-post-company pt-120 pb-120">
+        <div class="container">
+            <div class="row">
+
+
+                 <div id="accordion">
+                    {% for rs in faq %}
+                        <h3>{{ rs.question }}</h3>
+                        <div>
+                            <p>
+                                {{ rs.answer | safe}}
+                            </p>
+                        </div>
+                    {% endfor %}
+                </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

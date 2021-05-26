@@ -9,7 +9,7 @@ import json
 
 # Create your views here.
 from home.forms import SearchForm, RegisterForm
-from home.models import Setting, ContactFormu, ContactFormMessage, UserProfile
+from home.models import Setting, ContactFormu, ContactFormMessage, UserProfile, FAQ
 from job.models import Job, Category, Images, Comment
 
 
@@ -173,3 +173,12 @@ def register_view(request):
     return render(request, 'register.html', context)
 
 
+
+
+def faq(request):
+   category = Category.objects.all()
+   faq = FAQ.objects.all()
+   context = {'category': category,
+              'faq': faq,
+              }
+   return render(request,'faq.html',context)

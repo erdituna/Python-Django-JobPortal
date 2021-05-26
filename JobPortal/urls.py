@@ -28,6 +28,7 @@ urlpatterns = [
     path('category/<int:id>/<slug:slug>', views.category_jobs, name='category_jobs'),
     path('job/<int:id>/<slug:slug>', views.job_detail, name='job_detail'),
     path('search/', views.job_search, name='job_search'),
+    path('faq/', views.faq, name='faq'),
     path('search_auto/', views.job_search_auto, name='job_search_auto'),
     path('logout/', views.logout_view, name='logout_view'),
     path('login/', views.login_view, name='login_view'),
@@ -38,6 +39,7 @@ urlpatterns = [
     path('user/', include('user.urls')),
     path('admin/', admin.site.urls),
     path('ckeditor/', include('ckeditor_uploader.urls')),
+
 ]
 if settings.DEBUG: # new
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
