@@ -81,7 +81,6 @@ class Job(models.Model):
         return self.title
 
 
-    ## method to create a fake table field in read only mode
     def image_tag(self):
         return mark_safe('<img src="{}" height="50"/>'.format(self.image.url))
 

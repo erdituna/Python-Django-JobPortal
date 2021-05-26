@@ -17,16 +17,15 @@ def App(request,id):
     job = Job.objects.get(pk=id)
 
 
-    if request.method == 'POST':  # if there is a post
+    if request.method == 'POST':
         form = AppForm(request.POST)
-        #return HttpResponse(request.POST.items())
+
         if form.is_valid():
-            # Send Credit card to bank,  If the bank responds ok, continue, if not, show the error
-            # ..............
+
             data = Application()
             data.user_id = current_user.id
             data.job_id = id
-            data.first_name = form.cleaned_data['first_name'] #get product quantity from form
+            data.first_name = form.cleaned_data['first_name']
             data.last_name = form.cleaned_data['last_name']
             data.salary = form.cleaned_data['salary']
             data.company = form.cleaned_data['company']

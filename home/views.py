@@ -17,8 +17,8 @@ def index(request):
     category = Category.objects.all()
     setting = Setting.objects.get(pk=1)
     sliderdata = Job.objects.all().order_by('id')[:4]
-    jobs_latest = Job.objects.all().order_by('-id')[:4] #last 4 products
-    randomjobs = Job.objects.all().order_by('?')[:4]   #Random selected 4 products
+    jobs_latest = Job.objects.all().order_by('-id')[:4] #last 4 jobs
+    randomjobs = Job.objects.all().order_by('?')[:4]   #Random selected 4 jobs
     image = Images.objects.all()
 
     context = { 'setting' : setting,
@@ -61,11 +61,11 @@ def category_jobs(request,id,slug):
 
 
 def iletisim(request):
-    if request.method == 'POST':  # check post
+    if request.method == 'POST':
         form = ContactFormu(request.POST)
         if form.is_valid():
-            data = ContactFormMessage()  # create relation with model
-            data.name = form.cleaned_data['name']  # get form input data
+            data = ContactFormMessage()
+            data.name = form.cleaned_data['name']
             data.email = form.cleaned_data['email']
             data.subject = form.cleaned_data['subject']
             data.message = form.cleaned_data['message']
@@ -96,10 +96,10 @@ def job_detail(request,id,slug):
 
 
 def job_search(request):
-    if request.method == 'POST': # check post
+    if request.method == 'POST':
         form = SearchForm(request.POST)
         if form.is_valid():
-            query = form.cleaned_data['query'] # get form input data
+            query = form.cleaned_data['query']
             jobs = Job.objects.filter(title__icontains=query)
             category = Category.objects.all()
             context = {'jobs': jobs,
@@ -130,19 +130,19 @@ def logout_view(request):
 
 
 def login_view(request):
-    if request.method == 'POST':  # check post
+    if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
         user = authenticate(request,username=username, password=password)
         if user is not None:
             login(request, user)
             return HttpResponseRedirect('/')
-            # Redirect to a success page.
+
             ...
         else:
             messages.warning(request, "Login Hatası! Kullanıcı adı veya şifresi hatalı.")
             return HttpResponseRedirect('/login')
-            # Return an 'invalid login' error message.
+
             ...
     category = Category.objects.all()
     context = {'category': category}

@@ -11,7 +11,7 @@ from application.models import Application
 from home.models import UserProfile
 from job.models import Category, Comment
 from user.forms import ProfileUpdateForm, UserUpdateForm
-
+from user.models import Resume
 
 
 def index(request):
@@ -94,9 +94,23 @@ def comments(request):
 
 
 
-@login_required(login_url='/login') # Check login
+@login_required(login_url='/login')
 def user_deletecomment(request,id):
     current_user = request.user
     Comment.objects.filter(id=id, user_id=current_user.id).delete()
     messages.success(request, 'Comment deleted..')
     return HttpResponseRedirect('/user/comments')
+
+
+
+def resume(request):
+    category = Category.objects.all()
+    current_user = request.user
+    profile = UserProfile.objects.get(user_id=current_user.id)
+    resume = Resume.objects.all()
+    context = {'category': category,
+               'profile': profile,
+               'resume': resume,}
+    return render(request, 'resume_profile.html', context)
+
+

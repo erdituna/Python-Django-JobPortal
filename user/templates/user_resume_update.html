@@ -64,43 +64,18 @@
                 <!-- Right content -->
                 <div class="col-xl-9 col-lg-9 col-md-9">
                     <!-- Featured_job_start -->
-                    <section class="featured-job-area">
-                        <div class="container">
-                            <!-- Count of Job list Start -->
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <table class="progress-table">
-                        <tr>
-                            <th class="table-row">
-                                <a href="/user/user_resume_update" style="color:red">Update Profile</a>
-                            </th>
-
-                            </th>
-                            <td><img src="{{ profile.image.url }}" style="border-radius: 45px; height: 200px "></td>
-                        </tr>
-                        <tr>
-                            <th class="table-row">Name Surname</th>
-                            <td class="table-row">{{ user.first_name}} {{ user.last_name}} </td>
-                        </tr>
-
-                        <tr>
-                            <th class="table-row">about</th>
-                            <td class="table-row">{{ resume.about}}</td>
-                        </tr>
-                        <tr>
-                            <th class="table-row">skills</th>
-                            <td class="table-row">{{ resume.skills}}</td>
-                        </tr>
-                        <tr>
-                            <th class="table-row">school</th>
-                            <td class="table-row">{{ resume.school}}</td>
-                        </tr>
-                        <tr>
-                            <th class="table-row">grad_year</th>
-                            <td class="table-row">{{ cv.grad_year}}</td>
-                        </tr>
-
-                    </table>
+                     <form method="POST" enctype = "multipart/form-data">
+                        {% csrf_token %}
+                         <div class="mt-10">
+                        <fieldset class="single-input">
+                            {{ UserResumeUpdateForm.as_p  }}
+                            {{ ProfileResumeUpdateForm.as_p  }}
+                        </fieldset>
+                             </div>
+                        <div class="mt-10">
+                            <button class="button button-contactForm boxed-btn" type="submit">Update</button>
+                        </div>
+                    </form>
 
 
                                 </div>

@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.forms import TextInput, EmailInput, Select, FileInput
 
 from home.models import UserProfile
+from user.models import Resume
 
 
 class SignUpForm(UserCreationForm):
@@ -45,15 +46,3 @@ class ProfileUpdateForm(forms.ModelForm):
             'image'     : FileInput(attrs={'class': 'input', 'placeholder': 'image', }),
         }
 
-
-
-
-class Resume(UserCreationForm):
-    username = forms.CharField(max_length=30,label='User Name :')
-    email = forms.CharField(max_length=200,label='Email :')
-    first_name = forms.CharField(max_length=100,help_text='First Name' ,label='First name :')
-    last_name = forms.CharField(max_length=100,help_text='Last Name',label='Last name :')
-
-    class Meta:
-        model = User
-        fields = ('username','email','first_name','last_name','password1','password2',)
